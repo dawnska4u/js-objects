@@ -286,14 +286,15 @@ console.log(sumObj.result);
         Invoke this function and pass in your object. Further test by changing the values of the object being passed in or 
         **create more** objects and invoke your function multiple times.
  */
+
 function printObj(object){
   object.output = undefined;
   object.output = object.a + " + " + object.b + " = " + object.result;
+  console.log("9. ");
   return console.log(object);
 }
 
 printObj(sumObj);
-
 
 
 
