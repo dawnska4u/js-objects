@@ -14,8 +14,16 @@ Objects in Javascript can be compared to objects in real life. Objects has a col
     
     Console.log your object.
 */
-    
-  
+    var books = {
+      title: "The Obstacle is the Way",
+      author: "Ryan Holiday",
+      category: "Self Help",
+      pages: 200,
+    };
+
+    console.log("1. ");
+    console.log(books);
+ 
 /*
 2.  Declare a variable named `dog` and create the following properties (key-value pairs) to the object:
    
@@ -31,6 +39,16 @@ Objects in Javascript can be compared to objects in real life. Objects has a col
  "My dog `name` is `age` year old and likes to `speak`."
 */ 
 
+var dog = {
+  name: "Roxy",
+  age: 6,
+  vegeterian: false,
+  color: ["white", "black"],
+  speak: "bark!"
+};
+
+console.log("2. ");
+console.log("My Dog " + dog.name + " is " + dog.age + "years old and likes to " + dog.speak + " .");
 
 
 //An empty object
@@ -46,7 +64,15 @@ Objects in Javascript can be compared to objects in real life. Objects has a col
             
   Console.log the object.
 */
+var kicks = {};
 
+kicks.brand = "sketchers";
+kicks.color = "red";
+kicks. size = 9;
+kicks.buy = "Hell Yeah!";
+
+console.log("3. ");
+console.log(kicks);
 
 /* 
 
@@ -57,15 +83,35 @@ Objects in Javascript can be compared to objects in real life. Objects has a col
             - add a property named `contents` and set it to be an empty array.
 */
 
+var plainBox = {};
+
+plainBox.color = "red";
+plainBox.size = 10;
+plainBox.contents = [];
+
+console.log("4. ");
+console.log(plainBox);
+
 
 /*
 5. Declare a variable named `stockCar` and create the following properties (key-value pairs) to the object:
+            //KEY = property (in this case "model" would be an example of a
             - add a key named `model` and set its value to the name of an American car manufacturer.
             - add a key named `year` and set it to be a value above 2000 but below 2016.
             - add a key named `automaticTransmission` and give it a Boolean value of your choice.
             - add a key named `driver` and set it to be `null`.
             - add a key named `passengers` and set it to be an empty array.
 */
+var stockCar = {
+  model: "Ford",
+  year: 2012,
+  automaticTransmission: true,
+  driver: null,
+  passengers: []
+};
+
+console.log("5. ");
+console.log(stockCar);
 
 
 /*
@@ -84,7 +130,22 @@ Objects in Javascript can be compared to objects in real life. Objects has a col
    the return value in a variable named `completePerson`. Use `console.log` three times to print the entire object, just 
    the value at `name`, and just the value at `age`.
  */
+var plainPerson = {};
 
+function buildPerson(person, nameString, age){
+  person.name = nameString; //creating name property
+  person.age = age; // creating age property
+  return person;
+}
+
+buildPerson(plainPerson, "field", 21);
+
+var completePerson = buildPerson(plainPerson, "field", 21);
+
+console.log("6. ");
+console.log(completePerson);
+console.log(completePerson.name);
+console.log(completePerson.age);
 
 /*
 7. Display values of objects that are inside an array
@@ -111,6 +172,71 @@ Objects in Javascript can be compared to objects in real life. Objects has a col
             ...
  */
 
+ // TO GET A OBJECTS PROPERTY DO OBJECT.PROPERTY
+var arrayOfObjects = [
+  {
+    id: 0,
+    date: "Monday Jan 25 2015 2:01 PM",
+    total: "279.38"
+  },
+  {
+    id: 1,
+    date: "Monday Jan 27 2015 11:31 AM",
+    total: "79.80"
+  },
+  {
+    id: 2,
+    date: "Monday Feb 1 2015 7:56 AM",
+    total: "15.62"
+  },
+  {
+    id: 3,
+    date: "Monday Feb 1 2015 9:43 AM",
+    total: "19.83"
+  },
+  {
+    id: 4,
+    date: "Monday Feb 1 2015 11:08 PM",
+    total: "56.69"
+  },
+  {
+    id: 5,
+    date: "Monday Feb 13 2015 10:22 AM",
+    total: "137.92"
+  },
+  {
+    id: 6,
+    date: "Monday Feb 14 2015 6:54 PM",
+    total: "938.65"
+  },
+  {
+    id: 7,
+    date: "Monday Feb 14 2015 7:17 PM",
+    total: "43.77"
+  },
+  {
+    id: 8,
+    date: "Monday Feb 14 2015 7:18 PM",
+    total: "28.54"
+  },
+  {
+    id: 9,
+    date: "Monday Feb 14 2015 7:18 PM",
+    total: "194.33"
+  }
+];
+
+function printOrders(orders){
+  for(var i = 0; i < orders.length; i++){
+    console.log("====");
+    console.log("id: " + orders[i].id);
+    console.log("date: " + orders[i].date);
+    console.log("total: " + orders[i].total);
+}
+}
+
+console.log("7. is below: ");
+printOrders(arrayOfObjects);
 
 /*
 8. Addition with an object
@@ -124,6 +250,24 @@ Objects in Javascript can be compared to objects in real life. Objects has a col
         Invoke your function and pass in your object, store the result to a variable named sumObjResult and use `console.log` 
         to inspect your results.
 */
+//KEEP WORKING ON- HOW TO GET IT TO PUSH TO sumObj result and then show?
+
+var sumObj = {
+  a: 24,
+  b: 25,
+  result: undefined
+};
+
+function objectAddition(object){
+  var sum = object.a + object.b;
+ sumObj.result = sum;
+  return sumObj.result;
+  
+}
+
+objectAddition(sumObj);
+console.log("8. ");
+console.log(sumObj.result);
 
 
 /*
@@ -142,6 +286,15 @@ Objects in Javascript can be compared to objects in real life. Objects has a col
         Invoke this function and pass in your object. Further test by changing the values of the object being passed in or 
         **create more** objects and invoke your function multiple times.
  */
+function printObj(object){
+  object.output = undefined;
+  object.output = object.a + " + " + object.b + " = " + object.result;
+  return console.log(object);
+}
+
+printObj(sumObj);
+
+
 
 
 /*
@@ -154,7 +307,11 @@ Objects in Javascript can be compared to objects in real life. Objects has a col
         plainBoxResult and use `console.log` to inspect your results.
  */
 
+/*function putInPlainBox(object){
+  if(var i = 0; object.length < i; i++){
 
+  }
+}*/
 /*
 11. Detecting transmission
     Declare a function named detectingTransmission and a single parameter which will be an object. Within this function 
@@ -212,3 +369,5 @@ Objects in Javascript can be compared to objects in real life. Objects has a col
         'Marifel, age 19, is riding dirty!'
         'Victor, age 19, is riding dirty!'
  */
+
+ //new object = new variable
