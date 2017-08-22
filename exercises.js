@@ -313,6 +313,37 @@ printObj(sumObj);
 
   }
 }*/
+
+function putInPlainBox(object){
+  var storageBox = [];
+  var number = 0;
+  
+  for(var i = 0; i < 10; i++){
+   number = Math.floor((Math.random() * 100) + 1);
+   storageBox.push(number);
+   object.contents = storageBox;
+  
+  }
+  
+  return object;
+}
+
+putInPlainBox(plainBox);
+
+var plainBoxResult = putInPlainBox(plainBox);
+console.log(plainBoxResult);
+
+/*function putInPlainBox(object){
+  for(var i = 0; i < 11; i++){
+    object.contents = Math.floor((Math.random() * 100) + 1);
+    return object;
+  }
+}
+
+putInPlainBox(plainBox);
+
+var plainBoxResult = putInPlainBox(plainBox);
+console.log(plainBoxResult);*/
 /*
 11. Detecting transmission
     Declare a function named detectingTransmission and a single parameter which will be an object. Within this function 
