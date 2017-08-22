@@ -331,6 +331,7 @@ function putInPlainBox(object){
 putInPlainBox(plainBox);
 
 var plainBoxResult = putInPlainBox(plainBox);
+console.log("10. ");
 console.log(plainBoxResult);
 
 /*function putInPlainBox(object){
@@ -355,7 +356,19 @@ console.log(plainBoxResult);*/
     Invoke your function and pass in your stockCar object, store the result to a variable named isAutomaticTransmission and use `console.log` to inspect your results.
  */
 
+function detectingTransmission(object){
+  if(object.automaticTransmission === true){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+detectingTransmission(stockCar);
 
+var isAutomaticTransmission = detectingTransmission(stockCar);
+console.log("11. ");
+console.log(isAutomaticTransmission);
 /*
 12.  Who's driving this thing?!
      As you may have noticed that the `stockCar` doesn't have a driver!
